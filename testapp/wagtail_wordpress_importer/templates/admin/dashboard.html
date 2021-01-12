@@ -1,0 +1,110 @@
+{% load wagtailimages_tags wagtailcore_tags admin_urls %}
+
+<header class="panel summary nice-padding">
+    <div class="row">
+        <div class="left">
+            <h2>wagtail wordpress importer</h2>
+            <p><b> Dashboard</b></p>
+            <p>
+                Last imported: <b> {{ import_data.import }}</b> | Last processed:
+                <b> {{ import_data.processed }}</b> Last media fetch:
+                <b> {{ import_data.media_fetched_date }}</b>
+            </p>
+            <p>
+                Wagtail is a CMS based on Django. The current website is powered by
+                Wordpress. <br />
+                Wagtail Wordpress Importer is an app that collects all the data required
+                from the Wordpress API <br />
+                Via management scripts the collected content can be moved into the
+                Wagtail CMS
+            </p>
+            <p>
+                The Django Dashboard is where the imported data can be viewed before
+                moved into Wagtail
+            </p>
+        </div>
+        <div class="right">
+            <a href="{{ django_dashboard }}" class="button" id="open-requests">
+                Django Dashboard
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="panel summary nice-padding">
+    <h1>Import Summary</h1>
+    <p>Total are across all sub sites</p>
+</div>
+<div class="help-block help-info">
+    <p>
+        Summary of imported content from Wordpress. <br />
+        This is the content that is turned into Wagtail pages, posts, images,
+        documents etc. <br />
+        It's not the content displayed in Wagtail or the front end until it has
+        been processed...
+    </p>
+</div>
+
+<section class="panel summary nice-padding">
+    <h1>Content</h1>
+    <ul class="stats">
+        <li class="icon icon-doc-full">
+            <a href="{{ page_url }}"><span>{{ page_count }}</span> Pages</a>
+        </li>
+        <li class="icon icon-openquote">
+            <a href="{{ blog_url }}"><span>{{ blog_count }}</span> Blogs</a>
+        </li>
+        <li class="icon icon-snippet">
+            <a href="{{ post_url }}"><span>{{ post_count }}</span> Posts</a>
+        </li>
+        <li class="icon icon-form">
+            <a href="{{ document_url }}"><span>{{ document_count }}</span> Documents</a>
+        </li>
+        <li class="icon icon-duplicate">
+            <a href="{{ atlas_case_study_url }}"><span>{{ atlas_case_study_count }}</span> Atlas Case Studies</a>
+        </li>
+        <li class="icon icon-media">
+            <a href="{{ media_url }}"><span>{{ media_count }}</span> 
+                {% if media_not_run %}
+                Media Files: `run_fetch_media` needs to be run
+                {% else %}
+                Media Files ({{ media_size|filesizeformat }})
+                {% endif %}
+            </a>
+        </li>
+    </ul>
+</section>
+
+<section class="panel summary nice-padding">
+    <h1>Categorisation</h1>
+    <ul class="stats">
+        <li class="icon icon-tick-inverse">
+            <a href="{{ category_url }}"><span>{{ category_count }}</span> Categories</a>
+        </li>
+        <li class="icon icon-tick-inverse">
+            <a href="{{ publication_type_url }}"><span>{{ publication_type_count }}</span> Publication Types</a>
+        </li>
+        <li class="icon icon-tick-inverse">
+            <a href="{{ region_url }}"><span>{{ region_count }}</span> Regions</a>
+        </li>
+        <li class="icon icon-tick-inverse">
+            <a href="{{ setting_url }}"><span>{{ setting_count }}</span> Settings</a>
+        </li>
+    </ul>
+</section>
+
+<section class="panel summary nice-padding">
+    <h1>Custom Types</h1>
+    <p>not directly imported to wagtail but used to build page content stream fields when importing into wagtail</p>
+    <ul class="stats">
+        <li class="icon icon-cogs">
+            <a href="{{ custom_groups_url }}"><span>{{ custom_groups_count }}</span> Groups</a>
+        </li>
+        <li class="icon icon-cog">
+            <a href="{{ custom_fields_url }}"><span>{{ custom_fields_count }}</span> Fields</a>
+        </li>
+        <li class="icon icon-table">
+            <a href="{{ custom_fields_url }}"><span>{{ custom_layouts_count }}</span> Layouts</a>
+        </li>
+    </ul>
+</section>
