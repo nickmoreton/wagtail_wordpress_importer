@@ -26,6 +26,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     'home',
     'search',
+    'blog',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
 
     'wagtail_wordpress_importer',
     'simple_history',
+    'wagtail_wordpress_processor',
 ]
 
 SITE_ID = 1

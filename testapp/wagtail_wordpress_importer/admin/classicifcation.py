@@ -15,11 +15,11 @@ class ImportCategoryAdmin(AdminBase):
         'name',
         'slug',
         'get_live_link',
+        'get_wordpress_api_link',
         'truncate_description',
         'parent',
         'taxonomy',
         'count',
-        'get_wordpress_api_link',
         'sub_site',
     )
     list_filter = ('sub_site',)
@@ -38,11 +38,11 @@ class ImportRegionAdmin(AdminBase):
         'name',
         'slug',
         'get_live_link',
+        'get_wordpress_api_link',
         'truncate_description',
         'parent',
         'taxonomy',
         'count',
-        'get_wordpress_api_link',
         'sub_site',
     )
     list_filter = ('sub_site',)
@@ -61,11 +61,11 @@ class ImportSettingAdmin(AdminBase):
         'name',
         'slug',
         'get_live_link',
+        'get_wordpress_api_link',
         'truncate_description',
         'parent',
         'taxonomy',
         'count',
-        'get_wordpress_api_link',
         'sub_site',
     )
     list_filter = ('sub_site',)
@@ -84,11 +84,11 @@ class ImportPublicationTypeAdmin(AdminBase):
         'name',
         'slug',
         'get_live_link',
+        'get_wordpress_api_link',
         'truncate_description',
         'parent',
         'taxonomy',
         'count',
-        'get_wordpress_api_link',
         'sub_site',
     )
     list_filter = ('sub_site',)

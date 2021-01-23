@@ -61,5 +61,4 @@ class DataLog:
         data_string = self.read_data()
         for k,v in data_string.items():
             data_string[k] = parse_datetime(v)
-        print(data_string)
         return data_string

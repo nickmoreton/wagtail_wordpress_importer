@@ -18,6 +18,7 @@ class ImportPostAdmin(AdminBase):
         'status',
         '_type',
         'get_live_link',
+        'get_wordpress_api_link',
         'author',
         'featured_media',
         'comment_status',
@@ -28,7 +29,6 @@ class ImportPostAdmin(AdminBase):
         'categories',
         'tags',
         'pprint_custom_fields',
-        'get_wordpress_api_link',
         'date_gmt',
         'modified_gmt',
     )

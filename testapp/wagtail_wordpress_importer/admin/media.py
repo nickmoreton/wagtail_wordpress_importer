@@ -21,6 +21,7 @@ class ImportMediaAdmin(AdminBase):
         'source_404',
         '_type',
         'get_live_link',
+        'get_wordpress_api_link',
         'template',
         'caption',
         'alt_text',
@@ -33,7 +34,6 @@ class ImportMediaAdmin(AdminBase):
         'author',
         'comment_status',
         'ping_status',
-        'get_wordpress_api_link',
         'date_gmt',
         'modified_gmt',
     )

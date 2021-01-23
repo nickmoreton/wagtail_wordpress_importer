@@ -27,6 +27,14 @@ class ImportCategory(BaseImportWordpressDataModelMixin):
         return self.name
 
 
+class MasterImportCategory(models.Model):
+    category = models.ForeignKey(
+        ImportCategory,
+        on_delete=models.CASCADE
+    )
+    name = models.TextField()
+
+
 class ImportRegion(BaseImportWordpressDataModelMixin):
     ''' 
     a model intended for django admin management, 
